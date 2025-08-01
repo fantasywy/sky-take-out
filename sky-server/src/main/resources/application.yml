@@ -24,3 +24,9 @@ logging:
         mapper: debug
         service: info
         controller: info
+
+sky:
+  jwt:
+    admin-secret-key: admin-super-secure-and-long-secret-key-1234
+    admin-ttl: 7200000
+    admin-token-name: token
