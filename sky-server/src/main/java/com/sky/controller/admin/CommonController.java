@@ -37,7 +37,7 @@ public class CommonController {
         String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
         String filename = UUID.randomUUID() + suffix;
 
-        file.transferTo(new File("E:\\code\\resources\\images" + filename));
+        file.transferTo(new File("E:/code/resources/images/" + filename));
         return Result.success("http://localhost:8080/admin/common/download/" + filename);
     }
 
@@ -45,7 +45,7 @@ public class CommonController {
     @Operation(summary = "文件下载")
     public ResponseEntity<Resource> download(@PathVariable String filename) throws Exception {
         log.info("文件下载：{}", filename);
-        Path path = Paths.get("E:\\code\\resources\\images" + filename);
+        Path path = Paths.get("E:/code/resources/images/" + filename);
         Resource resource = new UrlResource(path.toUri());
         String contentType = Files.probeContentType(path);
         if (contentType == null) {
