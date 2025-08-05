@@ -19,10 +19,18 @@ public class Knife4jConfig {
     }
 
     @Bean
-    public GroupedOpenApi apiGroup() {
+    public GroupedOpenApi adminApi() {
         return GroupedOpenApi.builder()
-                .group("默认分组")
-                .packagesToScan("com.sky.controller")
+                .group("管理端接口")
+                .packagesToScan("com.sky.controller.admin")
+                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi userApi() {
+        return GroupedOpenApi.builder()
+                .group("用户端接口")
+                .packagesToScan("com.sky.controller.user")
                 .build();
     }
 }
