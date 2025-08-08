@@ -33,6 +33,8 @@
         <commons.lang>3.18.0</commons.lang>
         <springdoc>2.8.9</springdoc>
         <pagehelper>2.1.1</pagehelper>
+        <httpclient5>5.5</httpclient5>
+        <fastjson2>2.0.58</fastjson2>
     </properties>
 
     <dependencyManagement>
@@ -102,6 +104,18 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents.client5</groupId>
+                <artifactId>httpclient5</artifactId>
+                <version>${httpclient5}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

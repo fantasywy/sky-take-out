@@ -36,3 +36,9 @@ sky:
     admin-secret-key: admin-super-secure-and-long-secret-key-1234
     admin-ttl: 720000000
     admin-token-name: token
+    user-secret-key: user-super-secure-and-long-secret-key-1234
+    user-ttl: 720000000
+    user-token-name: authentication
+  wechat:
+    appid: ${sky.wechat.appid}
+    secret: ${sky.wechat.secret}
