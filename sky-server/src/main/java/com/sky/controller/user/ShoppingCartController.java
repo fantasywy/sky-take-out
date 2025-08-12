@@ -29,6 +29,14 @@ public class ShoppingCartController {
         return Result.success();
     }
 
+    @PostMapping("/sub")
+    @Operation(summary = "删除购物车")
+    public Result sub(@RequestBody ShoppingCartDTO shoppingCartDTO) {
+        log.info("删除购物车：{}", shoppingCartDTO);
+        shoppingCartService.subShoppingCart(shoppingCartDTO);
+        return Result.success();
+    }
+
     @GetMapping("/list")
     @Operation(summary = "查看购物车")
     public Result<List<ShoppingCart>> list(){
