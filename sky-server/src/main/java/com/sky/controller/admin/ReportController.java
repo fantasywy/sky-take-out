@@ -8,6 +8,7 @@ import com.sky.vo.TurnoverReportVO;
 import com.sky.vo.UserReportVO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,5 +55,12 @@ public class ReportController {
         log.info("销量排名top10：{}，{}", begin, end);
         SalesTop10ReportVO salesTop10ReportVO = reportService.getSalesTop10Report(begin, end);
         return Result.success(salesTop10ReportVO);
+    }
+
+    @GetMapping("/export")
+    @Operation(summary = "导出运营数据报表")
+    public void export(HttpServletResponse response) {
+        log.info("导出运营数据报表");
+        reportService.exportBusinessData(response);
     }
 }

@@ -35,6 +35,7 @@
         <pagehelper>2.1.1</pagehelper>
         <httpclient5>5.5</httpclient5>
         <fastjson2>2.0.58</fastjson2>
+        <poi>5.4.1</poi>
     </properties>
 
     <dependencyManagement>
@@ -116,6 +117,12 @@
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson2}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

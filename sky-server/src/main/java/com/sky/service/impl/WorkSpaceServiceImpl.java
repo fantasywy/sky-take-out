@@ -31,10 +31,7 @@ public class WorkSpaceServiceImpl implements WorkSpaceService {
     private SetmealMapper setmealMapper;
 
     @Override
-    public BusinessDataVO getBusinessData() {
-        LocalDateTime begin = LocalDateTime.now().with(LocalTime.MIN);
-        LocalDateTime end = LocalDateTime.now().with(LocalTime.MAX);
-
+    public BusinessDataVO getBusinessData(LocalDateTime begin, LocalDateTime end) {
         Map<String,Object> map = new HashMap<>();
         map.put("begin",begin);
         map.put("end",end);
