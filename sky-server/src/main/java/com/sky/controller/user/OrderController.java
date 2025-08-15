@@ -73,4 +73,12 @@ public class OrderController {
         orderService.cancel(ordersCancelDTO);
         return Result.success();
     }
+
+    @GetMapping("/reminder/{id}")
+    @Operation(summary = "客户催单")
+    public Result reminder(@PathVariable Long id){
+        log.info("客户催单：{}", id);
+        orderService.reminder(id);
+        return Result.success();
+    }
 }
